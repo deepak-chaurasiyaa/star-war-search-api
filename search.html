@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  position: relative;
+            
+    
+}
+img{
+    height: 640px;
+    width: 100%;
+}
+
+/* .text-block {
+  position: absolute;
+  bottom: 70%;
+  right: 40%;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+} */
+#container1{
+    width: 40%;
+    height: 60%;
+    border: 2px solid red;
+    position: absolute;
+    bottom: 23%;
+    right: 30%;
+}
+#name{
+    width: 100%;
+    height: 10%;
+    /* border: blue 1px solid; */
+}
+#name h1{
+    cursor: pointer;
+    color: chartreuse;
+    text-align: center;
+}
+#name h1:hover{
+    color: white;
+}
+   #container2{
+       margin-top: 3%;
+       width: 100%;
+    height: 65%;
+    /* border: rgb(94, 255, 0) 1px solid; */
+    
+    
+   }
+   #container21{
+       overflow: hidden;
+        border: 3px solid darkred;
+        cursor: pointer;
+       height: 85%;
+       width: 45%;float: left;
+       margin-left: 2%;
+       
+   }
+   #container22:hover{
+       border: 3px solid white;
+   }
+   #container21:hover{
+       border: 3px solid white;
+   }
+  
+   #container22{
+       overflow: hidden;
+       cursor: pointer;
+       border: 3px solid darkred;
+       height: 85%;
+       width: 45%;float: right;
+       margin-right: 2%;
+       
+   }
+   #button:hover{
+       color: white;
+       border:3px solid white;
+   }
+   #button{
+       border:3px solid red;
+       margin-top: 0%;
+       margin-left: 39%;
+       width: 25%;
+       height: 10%;
+       font-size: 150%;
+       cursor: pointer;
+       color: greenyellow;
+       
+       
+       
+       background-color: rgb(4,2,9);
+
+   }
+   h2,h3{
+       text-align: center;
+        color: greenyellow;
+   }
+   .soundOff{
+       position: relative;
+       float:right ;
+       margin-top: -45%;
+       margin-right: 3%;
+       color: rgb(4,2,9) ;
+       background-color:rgb(4,2,9); ;
+       
+    
+       
+   }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container" >
+        <img src="https://c.tenor.com/8XLxtxJzC68AAAAC/fns-shooting-stars.gif" alt=""> 
+        <div id="container1">
+         <div id = "name"></div>  
+         <div id="container2">
+             <div id="container21"class="container2" onmouseenter="entered()" onmouseleave="over()">
+                 <h2>Personal Info</h2>
+             </div>
+            <div id="container22" class="container21"onmouseenter="entered1()" onmouseleave="over1()">
+                <h2>Anatomy</h2>
+            </div>
+         </div>
+          <button id="button" onclick="back()">Go Back</button>
+              
+        </div>
+        <audio controls class="soundOff">
+            <!-- <source src="horse.ogg" type="audio/ogg"> -->
+            <source src="http://jestertrek.com/sounds/helmeng/iflyby3.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+</html>
+<script>
+    function back(){
+        window.location.href = "index.html"
+    }
+    let container1 = document.getElementById("container1");
+    let details = JSON.parse(localStorage.getItem('starwars'));
+   let data = details[0];
+   console.log(data);
+   let name = document.getElementById("name");
+   let hname = document.createElement('h1');
+   hname.innerHTML = data.name
+    name.append(hname);
+
+    let container2 = document.getElementById("container21");
+
+    let birth_year = document.createElement('h3');
+    birth_year.innerHTML = `Birth Year : ${data.birth_year}`;
+
+    let gender = document.createElement('h3');
+        gender.innerHTML = `Gender : ${data.gender}`;
+    
+    let height = document.createElement('h3');
+        height.innerHTML = `Gender : ${data.height}`;
+    
+    container21.append(birth_year,gender,height)
+    
+
+    let container22 = document.getElementById("container22");
+
+        let birth_year2 = document.createElement('h3');
+        birth_year2.innerHTML = `Eye Color : ${data.eye_color}`;
+
+        let gender2 = document.createElement('h3');
+        gender2.innerHTML = `mass : ${data.mass}`;
+
+        let height2 = document.createElement('h3');
+        height2.innerHTML = `Hair Color : ${data.hair_colo}`;
+
+        container22.append(birth_year2, gender2, height2)
+        
+        function entered(){
+         
+            let container2 = document.getElementById('container21');
+
+            container2.style.backgroundColor = "blue";
+            
+        }
+        function over(){
+            let container2 = document.getElementById('container21');
+
+            container2.style.backgroundColor = "transparent";
+        }
+
+        function entered1() {
+
+                let container2 = document.getElementById('container22');
+
+                container2.style.backgroundColor = "blue";
+
+            }
+            function over1() {
+                let container2 = document.getElementById('container22');
+
+                container2.style.backgroundColor = "transparent";
+            }
+</script>
