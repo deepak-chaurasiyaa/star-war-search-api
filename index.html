@@ -18,8 +18,10 @@
         
         } */
         #log{
-            width: 250px;
-            height: 120px;
+            width: 30%;
+            height: 20%;
+           margin-left: 73%;
+           
             background-color: transparent;
            
            
@@ -40,9 +42,9 @@
 #searchbox{
     position:absolute;
     bottom: 13%;
-    right: 32%;
+    right: 22%;
     height: 350px;
-    width: 500px;
+    width: 55%;
     
 }
     #input{
@@ -66,7 +68,7 @@
     justify-content: space-between;
 }
 .search__searchbox {
-    max-width: 600px;
+    max-width: 50%;
     width: 80%;
     border-radius: 20px;
     outline: 0;
@@ -80,12 +82,12 @@
      font-size: 25px;
      color:white;
      border: none;
-    width: 400px;
+    width: 80%;
     height: 40px;
 }
 #movies{
     
-    height: 250px;
+    height: 80%;
     width: 100%;
      color: wheat;
      border-bottom-left-radius: 20px;
@@ -134,6 +136,7 @@ p{
     margin-left: 20px;
 }
 p:hover{
+    cursor: pointer;
     color:yellow;
 }
 .cut{
@@ -296,15 +299,15 @@ p:hover{
 //     }
     
     var arr = ["https://c.tenor.com/8XLxtxJzC68AAAAC/fns-shooting-stars.gif","https://media2.giphy.com/media/zh1CiotVYB1DO2k8Ep/giphy.gif?cid=790b7611de0e5c6906e0ee3bf4aa33f1852587b29c3741b7&rid=giphy.gif&ct=g","https://i.gifer.com/DJRm.gif"]
-  
+   
+    var i = 1;
    let img = document.getElementById('body');
-   img.src = arr[0];
-   var i = 0;
+  img.src = arr[0];
     setInterval(() => {
         if(i == arr.length){
             i = 0;
         }
         img.src = arr[i];
         i++;
-    }, 3000);
+    }, 1800);
 </script>

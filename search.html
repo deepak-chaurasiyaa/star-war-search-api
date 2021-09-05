@@ -28,10 +28,17 @@ img{
 #container1{
     width: 40%;
     height: 60%;
-    border: 2px solid red;
+    border: 5px solid red;
     position: absolute;
     bottom: 23%;
     right: 30%;
+}
+#container1:hover{
+    border-left: blue 5px solid;
+    border-bottom: greenyellow 5px solid;
+    border-top: hotpink 5px solid;
+    border-right:yellow 5px solid ;
+
 }
 #name{
     width: 100%;
@@ -39,6 +46,7 @@ img{
     /* border: blue 1px solid; */
 }
 #name h1{
+    font-size: 150%;
     cursor: pointer;
     color: chartreuse;
     text-align: center;
@@ -56,11 +64,11 @@ img{
    }
    #container21{
        overflow: hidden;
-        border: 3px solid darkred;
+        border: 3px solid rgb(139, 0, 139);
         cursor: pointer;
        height: 85%;
        width: 45%;float: left;
-       margin-left: 2%;
+       margin-left: 1%;
        
    }
    #container22:hover{
@@ -73,11 +81,17 @@ img{
    #container22{
        overflow: hidden;
        cursor: pointer;
-       border: 3px solid darkred;
+       border: 3px solid rgb(139, 0, 139);
        height: 85%;
        width: 45%;float: right;
-       margin-right: 2%;
+       margin-right: 1%;
        
+   }
+   #container21 h2{
+       font-size: 136%;
+   }
+   #container22 h2{
+       font-size: 136%;
    }
    #button:hover{
        color: white;
@@ -86,10 +100,10 @@ img{
    #button{
        border:3px solid red;
        margin-top: 0%;
-       margin-left: 39%;
-       width: 25%;
-       height: 10%;
-       font-size: 150%;
+       margin-left: 35%;
+       width: 33%;
+       height: 12%;
+       font-size: 100%;
        cursor: pointer;
        color: greenyellow;
        
@@ -99,20 +113,48 @@ img{
 
    }
    h2,h3{
+       font-size: 96%;
        text-align: center;
         color: greenyellow;
    }
    .soundOff{
-       position: relative;
+       position:static;
        float:right ;
        margin-top: -45%;
-       margin-right: 3%;
+       margin-right: 2%;
+       width: 20%;
        color: rgb(4,2,9) ;
-       background-color:rgb(4,2,9); ;
-       
-    
-       
+       background-color:rgb(4,2,9); 
+           
    }
+  
+   ::-webkit-scrollbar {
+  width: 10px;
+    
+}
+::-webkit-scrollbar-button{
+    background-color: #2D2F30;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:#2D2F30; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 30px;
+  background: #555; 
+}
+::-webkit-scrollbar-corner{
+    border-radius: 30px;
+   background:#2D2F30; 
+}
 
     </style>
 </head>
@@ -130,7 +172,7 @@ img{
                 <h2>Anatomy</h2>
             </div>
          </div>
-          <button id="button" onclick="back()">Go Back</button>
+          <button id="button" onclick="back()">Back</button>
               
         </div>
         <audio controls class="soundOff">
@@ -163,7 +205,7 @@ img{
         gender.innerHTML = `Gender : ${data.gender}`;
     
     let height = document.createElement('h3');
-        height.innerHTML = `Gender : ${data.height}`;
+        height.innerHTML = `Height : ${data.height}`;
     
     container21.append(birth_year,gender,height)
     
@@ -174,10 +216,10 @@ img{
         birth_year2.innerHTML = `Eye Color : ${data.eye_color}`;
 
         let gender2 = document.createElement('h3');
-        gender2.innerHTML = `mass : ${data.mass}`;
+        gender2.innerHTML = `Mass : ${data.mass}`;
 
         let height2 = document.createElement('h3');
-        height2.innerHTML = `Hair Color : ${data.hair_colo}`;
+        height2.innerHTML = `Hair Color : ${data.hair_color}`;
 
         container22.append(birth_year2, gender2, height2)
         
